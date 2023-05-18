@@ -1,0 +1,31 @@
+.Header {
+  position: relative;
+}
+
+.Header-text {
+  width: 220px;
+  font-size: 1.2em;
+  line-height: 30px;
+}
+
+.fake-cursor {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  font-size: 25px;
+  transform: translateY(50%);
+}
+
+.neon-text {
+  margin-left: 20px;
+  color: rgba(245, 245, 245, 0.85);
+  font-weight: 600;
+  text-shadow: 1px 1px 2px orange, -1px -1px 2px orange, 1px 1px 10px orange, -1px -1px 10px orange, 0px 0px 20px orange,
+    0px 0px 14px rgba(255, 166, 0, 0.45);
+}
+
+@media (max-width: 900px) {
+  .Header-text {
+    width: 250px;
+    font-size: 1em;
+  }
+}
