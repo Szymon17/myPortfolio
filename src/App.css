@@ -31,18 +31,19 @@ a {
   background-color: black;
   font-family: "Roboto Mono", monospace;
   color: whitesmoke;
+  overflow: hidden;
 }
 
 .App-container {
   margin: 0 auto;
-  padding: 100px 40px;
+  padding: 90px 40px;
   width: clamp(350px, 90%, 1800px);
   height: 100%;
   min-height: 100vh;
 }
 
 .top {
-  height: 100vh;
+  height: calc(100vh - 180px);
   display: flex;
 }
 

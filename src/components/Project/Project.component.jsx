@@ -3,14 +3,17 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const variants = {
-  turnOff: {
-    opacity: 0,
+  offscreen: rightSide => {
+    if (window.innerWidth > 900) return { x: rightSide ? 500 : -500 };
+    else return { x: rightSide ? 100 : -100 };
   },
-  turnOn: {
-    opacity: 1,
-  },
-  darker: {
-    opacity: 0.1,
+  onscreen: {
+    x: 0,
+    transition: {
+      type: "spring",
+      bounce: 0.5,
+      duration: 0.9,
+    },
   },
   grow: {
     width: window.innerWidth > 900 ? "700px" : "100%",
@@ -20,31 +23,31 @@ const variants = {
     width: window.innerWidth > 900 ? "550px" : "100%",
     opacity: 1,
   },
+  turnOff: {
+    opacity: 0,
+  },
+  turnOn: {
+    opacity: 1,
+  },
+  darker: {
+    opacity: 0.1,
+  },
 };
 
 const Project = ({ imgUrl, title, children, hostLink, githubLink, technologies, right, handler = () => null }) => {
   const [isHover, setIsHoverState] = useState(false);
-  const [projectIsRender, setProjectIsRender] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      setProjectIsRender(true);
-      handler();
-    }, 500);
-  }, [handler, setProjectIsRender]);
-
-  const setAnimationForProject = () => {
-    if (projectIsRender && isHover) return "grow";
-    else if (projectIsRender && !isHover) return "normalWidth";
-    else if (!projectIsRender) return "turnOn";
-  };
+    setTimeout(() => handler(), 500);
+  }, [handler]);
 
   return (
     <div className={`${right ? "project right" : "project"}`}>
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={setAnimationForProject}
         variants={variants}
+        initial={() => variants.offscreen(right)}
+        animate={isHover ? "grow" : "normalWidth"}
+        whileInView="onscreen"
         whileHover={() => setIsHoverState(true)}
         onHoverEnd={() => setIsHoverState(false)}
         className="project-body"
