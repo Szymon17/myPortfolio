@@ -8,10 +8,10 @@ import checkersImg from "../../assets/checkers.jpg";
 import snakeImg from "../../assets/snake.jpg";
 
 const Projects = () => {
-  const { setProjectsIsRendered } = useContext(AnimationsContext);
+  const { setProjectsAreRendered } = useContext(AnimationsContext);
 
   const changeProjectsRenderState = () => {
-    setTimeout(() => setProjectsIsRendered(true), 500);
+    setTimeout(() => setProjectsAreRendered(true), 500);
   };
 
   return (
@@ -44,7 +44,7 @@ const Projects = () => {
           githubLink="https://github.com/Szymon17/QuizzesLand"
           technologies={["HTML", "CSS", "JavaScript"]}
         >
-          Gra w warcaby na zasadach tajskich. Zasady w tego typu warcabach rożnią sie nieco od najpopularniejszej wersji tej gry. Dokładny opis zasad
+          Gra w warcaby na zasadach tajskich. Zasady w tego typu warcabach różnią się nieco od najpopularniejszej wersji tej gry. Dokładny opis zasad
           umieszczony jest w dokumentacji projektu
         </Project>
         <Project

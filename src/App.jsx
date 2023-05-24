@@ -6,9 +6,10 @@ import Header from "./components/Header/Header.component";
 import Skills from "./components/Skills/Skills.component";
 import Projects from "./components/Projects/Projects.component";
 import CvLink from "./components/CvLink/CvLink.component";
+import ContactMe from "./components/ContactMe/ContactMe.component";
 
 function App() {
-  const { headerIsRendered, aboutMeIsRendered, skillsIsRendered } = useContext(AnimationsContext);
+  const { headerIsRendered, aboutMeIsRendered, skillsIsRendered, projectsAreRendered } = useContext(AnimationsContext);
 
   return (
     <div className="App">
@@ -24,9 +25,9 @@ function App() {
             </div>
           )}
         </div>
-
         {skillsIsRendered && <AboutMe />}
         {aboutMeIsRendered && <Projects />}
+        {projectsAreRendered && <ContactMe />}
       </div>
       <CvLink />
     </div>

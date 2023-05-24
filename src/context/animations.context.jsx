@@ -5,8 +5,8 @@ export const AnimationsContext = createContext({
   setHeaderIsRendered: () => null,
   aboutMeIsRendered: false,
   setAboutMeIsRendered: () => null,
-  projectsIsRendered: false,
-  setProjectsIsRendered: () => null,
+  projectsAreRendered: false,
+  setProjectsAreRendered: () => null,
   skillsIsRendered: false,
   setSkillsIsRendered: () => null,
 });
@@ -14,7 +14,7 @@ export const AnimationsContext = createContext({
 export const AnimationsProvider = ({ children }) => {
   const [headerIsRendered, setHeaderIsRendered] = useState(false);
   const [aboutMeIsRendered, setAboutMeIsRendered] = useState(false);
-  const [projectsIsRendered, setProjectsIsRendered] = useState(false);
+  const [projectsAreRendered, setProjectsAreRendered] = useState(false);
   const [skillsIsRendered, setSkillsIsRendered] = useState(false);
 
   const value = {
@@ -24,8 +24,8 @@ export const AnimationsProvider = ({ children }) => {
     setAboutMeIsRendered,
     skillsIsRendered,
     setSkillsIsRendered,
-    projectsIsRendered,
-    setProjectsIsRendered,
+    projectsAreRendered,
+    setProjectsAreRendered,
   };
 
   return <AnimationsContext.Provider value={value}>{children}</AnimationsContext.Provider>;

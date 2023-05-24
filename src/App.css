@@ -58,9 +58,9 @@ a {
 .top-image {
   width: 100%;
   height: 100%;
-  background-image: url("./assets/programingImage.jpg");
+  background-size: contain;
+  background-image: url("./assets/bgImage.jpg");
   background-position: top;
-  background-position-x: left;
   background-repeat: no-repeat;
 }
 
