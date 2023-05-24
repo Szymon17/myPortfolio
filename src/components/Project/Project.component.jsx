@@ -70,21 +70,20 @@ const Project = ({ imgUrl, title, children, hostLink, githubLink, technologies, 
         <motion.p animate={isHover ? "turnOff" : "turnOn"} variants={variants} className="project-text">
           {children}
         </motion.p>
-        {hostLink ||
-          (githubLink && (
-            <motion.div animate={isHover ? "turnOn" : "turnOff"} variants={variants} className={`buttons-container`}>
-              {githubLink && (
-                <a className="githublink" target="_blank" rel="noreferrer" href={githubLink}>
-                  Github
-                </a>
-              )}
-              {hostLink && (
-                <a className="hostinglink" target="_blank" rel="noreferrer" href={hostLink}>
-                  Hosting
-                </a>
-              )}
-            </motion.div>
-          ))}
+        {(githubLink || hostLink) && (
+          <motion.div animate={isHover ? "turnOn" : "turnOff"} variants={variants} className={`buttons-container`}>
+            {githubLink && (
+              <a className="githublink" target="_blank" rel="noreferrer" href={githubLink}>
+                Github
+              </a>
+            )}
+            {hostLink && (
+              <a className="hostlink" target="_blank" rel="noreferrer" href={hostLink}>
+                Hosting
+              </a>
+            )}
+          </motion.div>
+        )}
       </motion.div>
     </div>
   );

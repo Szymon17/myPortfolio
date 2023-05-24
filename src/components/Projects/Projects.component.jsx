@@ -22,6 +22,7 @@ const Projects = () => {
           title="Quizy"
           imgUrl={quizzesImg}
           githubLink="https://github.com/Szymon17/QuizzesLand"
+          hostLink="https://quizzes-95ef3.web.app/"
           technologies={["React", "Redux", "Typescript", "Firebase"]}
         >
           Projekt o tematyce quizów. Umożliwia rozwiązywanie quizów osadzonych w badzie danych. Pozwala użytkownikowi stworzyć swoje własne konto oraz

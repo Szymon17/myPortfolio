@@ -65,6 +65,14 @@
   opacity: 0;
   justify-content: space-between;
 }
+.buttons-container {
+  width: 40%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+}
 
 .buttons-container > a {
   min-width: fit-content;
@@ -77,13 +85,17 @@
   cursor: pointer;
   font-size: 1em;
   text-align: center;
-  position: absolute;
-  top: 10px;
 }
 
 .githublink {
   background-color: rgb(78, 78, 78);
   color: rgb(253, 207, 0);
+  box-shadow: inset 0 0 5px 0.5px black;
+}
+
+.hostlink {
+  background-color: rgb(78, 78, 78);
+  color: rgb(255, 0, 0);
   box-shadow: inset 0 0 5px 0.5px black;
 }
 
