@@ -90,13 +90,13 @@
 
 .githublink {
   background-color: rgb(78, 78, 78);
-  color: rgb(253, 207, 0);
+  color: rgb(255, 255, 255);
   box-shadow: inset 0 0 5px 0.5px black;
 }
 
 .hostlink {
   background-color: rgb(78, 78, 78);
-  color: rgb(255, 0, 0);
+  color: rgb(255, 166, 0);
   box-shadow: inset 0 0 5px 0.5px black;
 }
 

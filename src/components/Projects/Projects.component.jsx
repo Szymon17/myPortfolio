@@ -26,7 +26,8 @@ const Projects = () => {
           technologies={["React", "Redux", "Typescript", "Firebase"]}
         >
           Projekt o tematyce quizów. Umożliwia rozwiązywanie quizów osadzonych w badzie danych. Pozwala użytkownikowi stworzyć swoje własne konto oraz
-          swój własny quiz. Stworzone quizy można edytować oraz usuwać.
+          swój własny quiz. Stworzone quizy można edytować oraz usuwać. Konto testowe:
+          <p className="text-bold">Email: test@gmail.com</p> <p className="text-bold">Hasło: haslo1234</p>
         </Project>
         <Project
           title="5seconds"
