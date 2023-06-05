@@ -76,7 +76,7 @@
 }
 
 .buttons-container > a {
-  min-width: fit-content;
+  min-width: 100px;
   width: 100px;
   line-height: 35px;
   border: none;
@@ -109,5 +109,10 @@
   }
   .project {
     height: auto;
+    font-size: 12px;
+  }
+  .project-background {
+    width: 0;
+    height: 0;
   }
 }

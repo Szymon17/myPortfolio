@@ -49,6 +49,7 @@ a {
 
 .top-left {
   width: 50%;
+  position: relative;
 }
 
 .top-right {

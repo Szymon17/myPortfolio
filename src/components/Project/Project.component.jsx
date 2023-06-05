@@ -2,6 +2,8 @@ import "./Project.styles.css";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
+const breakPoint = 900;
+
 const variants = {
   offscreen: rightSide => {
     if (window.innerWidth > 900) return { x: rightSide ? 500 : -500 };
@@ -16,11 +18,11 @@ const variants = {
     },
   },
   grow: {
-    width: window.innerWidth > 900 ? "700px" : "100%",
+    width: window.innerWidth > breakPoint ? "700px" : "100%",
     opacity: 1,
   },
   normalWidth: {
-    width: window.innerWidth > 900 ? "550px" : "100%",
+    width: window.innerWidth > breakPoint ? "550px" : "100%",
     opacity: 1,
   },
   turnOff: {
@@ -67,9 +69,9 @@ const Project = ({ imgUrl, title, children, hostLink, githubLink, technologies, 
             </div>
           )}
         </div>
-        <motion.p animate={isHover ? "turnOff" : "turnOn"} variants={variants} className="project-text">
+        <motion.div animate={isHover && window.innerHeight > breakPoint ? "turnOff" : "turnOn"} variants={variants} className="project-text">
           {children}
-        </motion.p>
+        </motion.div>
         {(githubLink || hostLink) && (
           <motion.div animate={isHover ? "turnOn" : "turnOff"} variants={variants} className={`buttons-container`}>
             {githubLink && (

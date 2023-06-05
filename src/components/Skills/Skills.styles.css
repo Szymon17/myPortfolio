@@ -3,7 +3,7 @@
   top: 50%;
   left: 5%;
   transform: translateY(-50%);
-  width: clamp(250px, 100%, 500px);
+  max-width: 500px;
   margin-top: 50px;
   padding: 10px 40px;
 }
@@ -20,4 +20,10 @@
   border-radius: 5px;
   box-shadow: 0 0 5px 0.5px white;
   font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .skills {
+    padding: 0px 0px;
+  }
 }
