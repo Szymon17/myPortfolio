@@ -1,17 +1,8 @@
 import "./Skills.styles.css";
-import { useContext, useEffect } from "react";
-import { motion } from "framer-motion";
-import { AnimationsContext } from "../../context/animations.context";
 
 const Skills = () => {
-  const { setSkillsIsRendered } = useContext(AnimationsContext);
-
-  useEffect(() => {
-    setTimeout(() => setSkillsIsRendered(true), 500);
-  }, [setSkillsIsRendered]);
-
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="skills">
+    <div className="skills">
       <div className="section-title">Umiejęctności</div>
       <div className="skills-container">
         <span className="skill html">HTML</span>
@@ -24,7 +15,7 @@ const Skills = () => {
         <span className="skill">Git</span>
         <span className="skill">Webpack</span>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

@@ -7,23 +7,23 @@ export const AnimationsContext = createContext({
   setAboutMeIsRendered: () => null,
   projectsAreRendered: false,
   setProjectsAreRendered: () => null,
-  skillsIsRendered: false,
-  setSkillsIsRendered: () => null,
+  topPanelIsRendered: false,
+  setTopPanelIsRendered: () => null,
 });
 
 export const AnimationsProvider = ({ children }) => {
   const [headerIsRendered, setHeaderIsRendered] = useState(false);
   const [aboutMeIsRendered, setAboutMeIsRendered] = useState(false);
   const [projectsAreRendered, setProjectsAreRendered] = useState(false);
-  const [skillsIsRendered, setSkillsIsRendered] = useState(false);
+  const [topPanelIsRendered, setTopPanelIsRendered] = useState(false);
 
   const value = {
     headerIsRendered,
     setHeaderIsRendered,
     aboutMeIsRendered,
     setAboutMeIsRendered,
-    skillsIsRendered,
-    setSkillsIsRendered,
+    topPanelIsRendered,
+    setTopPanelIsRendered,
     projectsAreRendered,
     setProjectsAreRendered,
   };
