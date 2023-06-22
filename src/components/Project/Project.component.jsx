@@ -39,12 +39,12 @@ const Project = ({ imgUrl, title, children, hostLink, githubLink, technologies, 
           <div className="project__linksContainer">
             {githubLink && (
               <a href={githubLink} className="project__link githubLink" target="__blank">
-                Github
+                Kod źródłowy
               </a>
             )}
             {hostLink && (
               <a href={hostLink} className="project__link hostLink" target="__blank">
-                Hosting
+                Demo
               </a>
             )}
           </div>

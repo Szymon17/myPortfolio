@@ -1,8 +1,8 @@
 .project {
+  margin-bottom: 100px;
   max-width: 1920px;
   position: relative;
   height: 450px;
-  margin-bottom: 40px;
   border-radius: 10px;
 }
 

@@ -25,33 +25,28 @@ const Projects = () => {
           hostLink="https://quizzes-95ef3.web.app/"
           technologies={["React", "Redux", "Typescript", "Firebase"]}
         >
-          Projekt o tematyce quizów. Umożliwia rozwiązywanie quizów osadzonych w badzie danych. Pozwala użytkownikowi stworzyć swoje własne konto oraz
+          Projekt o tematyce quizów. Umożliwia rozwiązywanie quizów osadzonych w bazie danych. Pozwala użytkownikowi stworzyć swoje własne konto oraz
           swój własny quiz. Stworzone quizy można edytować oraz usuwać. Konto testowe:
           <p className="text-bold">Email: test@gmail.com</p> <p className="text-bold">Hasło: haslo1234</p>
         </Project>
         <Project
           title="5seconds"
           imgUrl={secondsImg}
-          githubLink="https://github.com/Szymon17/QuizzesLand"
+          githubLink="https://github.com/Szymon17/5seconds"
           technologies={["React", "Typescript"]}
           right={true}
         >
           Projekt mający na celu stworzenie prostej gry, w której można spędzać miło czas ze znajomymi. Zasady są proste. Osoba prowadząca transmituje
           na żywo obraz z gry, gracze po kolei losują pytania a następnie mają równo 5 sekund na odpowiedź.
         </Project>
-        <Project
-          title="Warcaby"
-          imgUrl={checkersImg}
-          githubLink="https://github.com/Szymon17/QuizzesLand"
-          technologies={["HTML", "CSS", "JavaScript"]}
-        >
+        <Project title="Warcaby" imgUrl={checkersImg} githubLink="https://github.com/Szymon17/Checkers" technologies={["HTML", "CSS", "JavaScript"]}>
           Gra w warcaby na zasadach tajskich. Zasady w tego typu warcabach różnią się nieco od najpopularniejszej wersji tej gry. Dokładny opis zasad
           umieszczony jest w dokumentacji projektu
         </Project>
         <Project
           title="Snake"
           imgUrl={snakeImg}
-          githubLink="https://github.com/Szymon17/QuizzesLand"
+          githubLink="https://github.com/Szymon17/snake"
           technologies={["HTML", "CSS", "JavaScript"]}
           right={true}
           handler={changeProjectsRenderState}
