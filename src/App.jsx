@@ -13,9 +13,11 @@ function App() {
 
   return (
     <div className="App">
-      <div className="App-container">
+      <div className="title-page__container">
         <Header />
         {headerIsRendered && <TopPanel />}
+      </div>
+      <div className="App-container">
         {topPanelIsRendered && <AboutMe />}
         {aboutMeIsRendered && <Projects />}
         {projectsAreRendered && <ContactMe />}
