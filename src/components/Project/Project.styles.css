@@ -91,9 +91,7 @@
     box-shadow: 0 0 3px 0px;
   }
   .project > .project__image {
-    left: 0;
-    opacity: 0.2;
-    width: 100%;
+    display: none;
   }
   .project > .project__description {
     left: 0;
@@ -104,10 +102,11 @@
   .project__text {
     width: 100%;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.514);
   }
 
   .project__technologies {
+    display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     margin-top: 10px;
   }
