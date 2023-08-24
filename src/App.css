@@ -122,6 +122,11 @@ a {
   text-shadow: 1px 1px 2px rgb(255, 166, 0), -1px -1px 2px rgb(255, 166, 0), 1px 1px 10px rgb(255, 166, 0), -1px -1px 10px rgb(255, 166, 0);
 }
 
+.nodejs {
+  color: #c7c7c7;
+  text-shadow: 1px 1px 2px rgb(34, 206, 0), -1px -1px 2px rgb(34, 206, 0), 1px 1px 10px rgb(34, 206, 0), -1px -1px 10px rgb(34, 206, 0);
+}
+
 @media (max-width: 1200px) {
   .App-container {
     width: 90%;
