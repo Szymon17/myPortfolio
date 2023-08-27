@@ -20,15 +20,14 @@ const Projects = () => {
       <p className="section-title">Projekty</p>
       <div className="section-body">
         <Project
-          title="Quizy"
+          title="CarRentPark"
           imgUrl={carRentParkImg}
           githubLink="https://github.com/Szymon17/CarRentPark"
           hostLink="https://carrentpark.szymon17.warszawa.pl/"
           technologies={["React", "Redux", "Typescript", "NodeJS"]}
         >
-          Mój pierwszy projekt z użyciem bazy danych oraz napisanym własnym serwerem w nodejs, który chcę pokazać światu. Aplikacja o tematyce
-          wypożyczalni aut pozawala na zakładanie konta, logowanie się, przegladanie ogłoszeń, zamawianie produktów jak i posiada mały panel dotyczący
-          konta w którym to można edytować dane użytkownika, sprawdzać zamówienia a nawet usunąć konto.
+          Aplikacja o tematyce wypożyczalni aut pozawala na zakładanie konta, logowanie się, przegladanie ogłoszeń, zamawianie produktów jak i posiada
+          mały panel dotyczący konta w którym to można edytować dane użytkownika, sprawdzać zamówienia a nawet usunąć konto.
           <span className="text-bold">Email: Test@gmaill.com</span> <span className="text-bold">Hasło: 123456</span>
         </Project>
         <Project
