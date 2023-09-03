@@ -1,0 +1,19 @@
+.navigation {
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  background-color: #d9d9d9;
+}
+
+.navigation__list {
+  margin: 0 auto;
+  width: clamp(300px, 50%, 500px);
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation__item {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 550;
+  cursor: pointer;
+}
