@@ -25,6 +25,7 @@ const Projects = () => {
           githubLink="https://github.com/Szymon17/CarRentPark"
           hostLink="https://carrentpark.szymon17.warszawa.pl/"
           technologies={["React", "Redux", "Typescript", "NodeJS"]}
+          right={true}
         >
           Aplikacja o tematyce wypożyczalni aut pozawala na zakładanie konta, logowanie się, przegladanie ogłoszeń, zamawianie produktów jak i posiada
           mały panel dotyczący konta w którym to można edytować dane użytkownika, sprawdzać zamówienia a nawet usunąć konto.
@@ -53,7 +54,7 @@ const Projects = () => {
         </Project>
         <Project title="Warcaby" imgUrl={checkersImg} githubLink="https://github.com/Szymon17/Checkers" technologies={["HTML", "CSS", "JavaScript"]}>
           Gra w warcaby na zasadach tajskich. Zasady w tego typu warcabach różnią się nieco od najpopularniejszej wersji tej gry. Dokładny opis zasad
-          umieszczony został w dokumentacji projektu
+          umieszczony został w dokumentacji projektu.
         </Project>
         <Project
           title="Snake"

@@ -8,6 +8,8 @@ import reactImage from "../../assets/technologyLogos/react.png";
 import reduxImage from "../../assets/technologyLogos/redux.png";
 import gitImage from "../../assets/technologyLogos/git.png";
 import webpackImage from "../../assets/technologyLogos/webpack.png";
+import graphQl from "../../assets/technologyLogos/grapgql.png";
+import nodeJS from "../../assets/technologyLogos/nodejs.png";
 
 const Skills = () => {
   return (
@@ -40,6 +42,12 @@ const Skills = () => {
         </span>
         <span className="skill">
           <img src={gitImage} alt="tech" />
+        </span>
+        <span className="skill">
+          <img src={graphQl} alt="tech" />
+        </span>
+        <span className="skill">
+          <img src={nodeJS} alt="tech" />
         </span>
       </div>
     </div>
