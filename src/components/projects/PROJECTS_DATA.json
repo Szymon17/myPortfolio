@@ -1,0 +1,10 @@
+{
+  "projects": [
+    {
+      "name": "CarRentPark",
+      "description": "Aplikacja o tematyce wypożyczalni aut pozawala na zakładanie konta, logowanie się, przegladanie ogłoszeń, zamawianie produktów jak i posiada mały panel dotyczący konta w którym to można edytować dane użytkownika, sprawdzać zamówienia a nawet usunąć konto.",
+      "technolgies": ["react", "redux", "ts", "sass", "nodejs", "mongodb", "express"],
+      "imgUrl": "/assets/images/carRentPark.jpg"
+    }
+  ]
+}

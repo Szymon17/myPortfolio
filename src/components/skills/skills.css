@@ -1,0 +1,15 @@
+.skills__list {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 4em 6.25em;
+}
+
+.skills__item {
+  width: 5.5em;
+}
+
+.skills__image {
+  width: 100%;
+}
