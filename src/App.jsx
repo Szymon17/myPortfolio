@@ -5,6 +5,7 @@ import Home from "./components/home/home";
 import About from "./components/about/about";
 import Skills from "./components/skills/skills";
 import Projects from "./components/projects/projects";
+import TimeLine from "./components/time-line/time-line";
 
 function App() {
   const [homeIsRendered, setHomeState] = useState(false);
@@ -20,6 +21,7 @@ function App() {
           <About />
           <Skills />
           <Projects />
+          <TimeLine />
         </>
       )}
     </div>

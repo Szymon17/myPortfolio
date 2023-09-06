@@ -35,7 +35,7 @@ const Home = ({ renderedHandler }) => {
         </motion.span>
         <div className="home__welcomeBanner__text">
           <motion.h1 onAnimationComplete={() => setNameAnimationState(true)} animate={name} className="home__welcomeBanner__name">
-            Cześć, jestem <span className="home__welcomeBanner__name-bold">Szymon</span>
+            Cześć,jestem <span className="home__welcomeBanner__name-bold">Szymon</span>
           </motion.h1>
           <h3 className="home__welcomeBanner__profession">{nameAnimationComplete && <TypeWriter>Web Developer</TypeWriter>}</h3>
         </div>

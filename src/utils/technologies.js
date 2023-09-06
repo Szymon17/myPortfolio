@@ -10,6 +10,9 @@ const technologies = new Map([
   ["nodejs", "/assets/technologyLogos/nodejs.png"],
   ["webpack", "/assets/technologyLogos/webpack.png"],
   ["git", "/assets/technologyLogos/git.png"],
+  ["express", "/assets/technologyLogos/express.png"],
+  ["mongodb", "/assets/technologyLogos/mongodb.png"],
+  ["firebase", "/assets/technologyLogos/firebase.png"],
 ]);
 
 export default technologies;
