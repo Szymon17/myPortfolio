@@ -18,7 +18,7 @@ const item = {
 
 const About = () => {
   return (
-    <motion.section variants={section} initial="hidden" whileInView="show" className="about shadow">
+    <motion.section id="About" variants={section} initial="hidden" whileInView="show" className="about shadow">
       <motion.h2 variants={item} className="about__title">
         O mnie
       </motion.h2>

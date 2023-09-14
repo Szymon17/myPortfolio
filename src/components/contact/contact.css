@@ -1,0 +1,22 @@
+.contact {
+  padding-left: 30%;
+  padding-right: 30%;
+  min-height: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact__icon {
+  font-size: 40px;
+  color: black;
+}
+
+@media (max-width: 400px) {
+  .contact {
+    padding: 0 10%;
+  }
+  .contact__icon {
+    font-size: 30px;
+  }
+}

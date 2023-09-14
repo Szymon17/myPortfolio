@@ -29,7 +29,7 @@ const technologiesArray = Array(...technologies.values());
 
 const Skills = () => {
   return (
-    <motion.section variants={animations.section} initial="hidden" whileInView="show" className="skills">
+    <motion.section id="Skills" variants={animations.section} initial="hidden" whileInView="show" className="skills">
       <h2 className="skills__title">Umiejętności</h2>
       <motion.ul variants={animations.list} className="skills__list">
         {technologiesArray.map((url, index) => (

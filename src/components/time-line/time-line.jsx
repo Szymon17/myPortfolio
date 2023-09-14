@@ -1,7 +1,11 @@
+import "./time-line.css";
+import DATA from "./TIME-LINE_DATA.json";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import DATA from "./TIME-LINE_DATA.json";
-import "./time-line.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHandPointer } from "@fortawesome/free-solid-svg-icons";
+
+const remindAnimationDuration = 2000;
 
 const animations = {
   list: {
@@ -24,6 +28,10 @@ const animations = {
     hidden: { opacity: 0, y: -300 },
     show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   },
+  icon: {
+    initial: { opacity: 1, x: 50, transition: { duration: 0.5 } },
+    animate: { opacity: [1, 1, 1, 1, 0], x: [50, -50, 50, -50, -50], transition: { duration: remindAnimationDuration / 1000 } },
+  },
 };
 
 const TimeLine = () => {
@@ -37,33 +45,34 @@ const TimeLine = () => {
   const [itemWidth, setItemWidth] = useState(300);
   const [padding, setPadding] = useState(30);
   const [distanceBetweenItems, setItemDistance] = useState(50);
+  const [remindAboutDrag, setRemindAboutDragState] = useState(false);
+  const [remindIntervalIndex, setRemindIntervalIndex] = useState(0);
 
   useEffect(() => {
+    const calculateItemsRation = (ItemWidth, DistanceBetweenItems) =>
+      (timelineRef.current.offsetWidth - padding) / (ItemWidth + DistanceBetweenItems);
+
     const changeItemsSizeToFitPage = () => {
       let tmpItemWidth = 300;
       let tmpDistanceBetweenItems = 50;
       let maxLoopCount = 100;
 
-      const calculateItemsRation = () => (timelineRef.current.offsetWidth - padding) / (tmpItemWidth + tmpDistanceBetweenItems);
+      let itemsRatio = calculateItemsRation(tmpItemWidth, tmpDistanceBetweenItems);
 
-      let itemsRatio = calculateItemsRation();
-      console.log(itemsRatio);
       if (timelineRef.current.offsetWidth > 350) {
         if (itemsRatio - Math.floor(itemsRatio) >= 0.6) {
           while (itemsRatio - Math.floor(itemsRatio) >= 0.6 && itemsRatio - Math.floor(itemsRatio) < 0.9 && maxLoopCount > 0) {
             tmpItemWidth -= 5;
             tmpDistanceBetweenItems -= 6;
-            itemsRatio = calculateItemsRation();
+            itemsRatio = calculateItemsRation(tmpItemWidth, tmpDistanceBetweenItems);
             maxLoopCount--;
           }
         } else {
           while (itemsRatio - Math.floor(itemsRatio) < 0.6 && maxLoopCount > 0) {
             tmpItemWidth += 5;
             tmpDistanceBetweenItems += 6;
-            itemsRatio = calculateItemsRation();
+            itemsRatio = calculateItemsRation(tmpItemWidth, tmpDistanceBetweenItems);
             maxLoopCount--;
-
-            console.log("wykonano");
           }
         }
         setPadding(30);
@@ -79,43 +88,50 @@ const TimeLine = () => {
     if (!timelineRef.current || !contentRef.current) return;
 
     changeItemsSizeToFitPage();
-
     const observer = new ResizeObserver(changeItemsSizeToFitPage);
-
     observer.observe(document.body);
 
     return () => {
       observer.disconnect();
+      clearInterval(remindIntervalIndex);
     };
   }, []);
 
   useEffect(() => {
     const changeDragSize = () => {
       const { width } = timelineRef.current.getBoundingClientRect();
-      const offSetWidth = contentRef.current.scrollWidth;
+      const offSetWidth = (items.length - 1) * (itemWidth + distanceBetweenItems) + itemWidth;
       const newOffset = offSetWidth - width;
 
-      console.log(newOffset, offSetWidth);
       setOffset(newOffset);
       setDragField(offSetWidth);
     };
     changeDragSize();
-
-    console.log(padding);
   }, [itemWidth]);
 
+  const remind = () => {
+    clearInterval(remindIntervalIndex);
+
+    const newInterval = setInterval(() => setRemindAboutDragState(true), 20000 + remindAnimationDuration);
+
+    setRemindIntervalIndex(newInterval);
+  };
+
   return (
-    <motion.section style={{ padding: padding }} initial="hidden" whileInView="show" ref={timelineRef} className="timeLine shadow">
-      <div
-        ref={dragFieldRef}
-        className="timeLine__dragField"
-        style={{
-          left: `-${offset + padding}px`,
-          width: `${dragFieldWidth}px`,
-        }}
-      ></div>
+    <motion.section
+      onClick={remind}
+      onViewportEnter={remind}
+      onViewportLeave={() => clearInterval(remindIntervalIndex)}
+      style={{ padding: `0 ${padding}px` }}
+      initial="hidden"
+      whileInView="show"
+      ref={timelineRef}
+      className="timeLine"
+      id="Timeline"
+    >
+      <div ref={dragFieldRef} className="timeLine__dragField" style={{ left: `-${offset + padding}px`, width: `${dragFieldWidth}px` }}></div>
       <motion.div key={offset} ref={contentRef} dragConstraints={dragFieldRef} drag="x" className="timeLine__container">
-        <motion.ul variants={animations.list} className="timeLine__list">
+        <motion.ul style={{ width: `${dragFieldWidth}px`, height: "100%" }} variants={animations.list} className="timeLine__list">
           {items.map(({ date, text }, index) => (
             <motion.li variants={animations.item} style={{ left: (itemWidth + distanceBetweenItems) * index }} key={index} className="timeLine__item">
               <motion.div variants={animations.text} style={{ width: itemWidth }} className="timeLine__textContainer">
@@ -128,6 +144,17 @@ const TimeLine = () => {
         </motion.ul>
         <div style={{ width: (items.length - 1) * (itemWidth + distanceBetweenItems) }} className="timeLine__line" />
       </motion.div>
+      {remindAboutDrag && (
+        <motion.span
+          variants={animations.icon}
+          onAnimationComplete={() => setRemindAboutDragState(false)}
+          initial="initial"
+          animate="animate"
+          className="timeLine__icon"
+        >
+          <FontAwesomeIcon icon={faHandPointer} />
+        </motion.span>
+      )}
     </motion.section>
   );
 };
