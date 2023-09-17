@@ -9,6 +9,11 @@ const Navigation = () => {
     <div className="navigation">
       <ul className="navigation__list">
         <li>
+          <Link onClick={() => scroll.scrollToTop()} className="navigation__item">
+            Strona główna
+          </Link>
+        </li>
+        <li>
           <Link to="About" smooth offset={-navHeight} className="navigation__item">
             O mnie
           </Link>

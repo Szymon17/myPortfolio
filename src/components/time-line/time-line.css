@@ -1,6 +1,7 @@
 .timeLine {
   height: 320px;
   position: relative;
+  padding: 0;
 }
 
 .timeLine__dragField {
@@ -66,8 +67,8 @@
   left: 50%;
 }
 
-@media (max-width: 350px) {
-  .timeLine {
-    padding: 30px;
+@media (max-width: 1200px) {
+  .timeLine__textContainer {
+    font-size: 0.9em;
   }
 }

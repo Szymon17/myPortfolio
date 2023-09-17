@@ -43,14 +43,14 @@ const TimeLine = () => {
   const [offset, setOffset] = useState(0);
   const [dragFieldWidth, setDragField] = useState(0);
   const [itemWidth, setItemWidth] = useState(300);
-  const [padding, setPadding] = useState(30);
+  const [margin, setMargin] = useState(100);
   const [distanceBetweenItems, setItemDistance] = useState(50);
   const [remindAboutDrag, setRemindAboutDragState] = useState(false);
   const [remindIntervalIndex, setRemindIntervalIndex] = useState(0);
 
   useEffect(() => {
     const calculateItemsRation = (ItemWidth, DistanceBetweenItems) =>
-      (timelineRef.current.offsetWidth - padding) / (ItemWidth + DistanceBetweenItems);
+      (timelineRef.current.offsetWidth + margin / 2) / (ItemWidth + DistanceBetweenItems);
 
     const changeItemsSizeToFitPage = () => {
       let tmpItemWidth = 300;
@@ -61,24 +61,24 @@ const TimeLine = () => {
 
       if (timelineRef.current.offsetWidth > 350) {
         if (itemsRatio - Math.floor(itemsRatio) >= 0.6) {
-          while (itemsRatio - Math.floor(itemsRatio) >= 0.6 && itemsRatio - Math.floor(itemsRatio) < 0.9 && maxLoopCount > 0) {
-            tmpItemWidth -= 5;
-            tmpDistanceBetweenItems -= 6;
+          while (itemsRatio - Math.floor(itemsRatio) >= 0.6 && itemsRatio - Math.floor(itemsRatio) < 0.99 && maxLoopCount > 0) {
+            tmpItemWidth -= 2;
+            tmpDistanceBetweenItems -= 0.5;
             itemsRatio = calculateItemsRation(tmpItemWidth, tmpDistanceBetweenItems);
             maxLoopCount--;
           }
         } else {
           while (itemsRatio - Math.floor(itemsRatio) < 0.6 && maxLoopCount > 0) {
-            tmpItemWidth += 5;
-            tmpDistanceBetweenItems += 6;
+            tmpItemWidth += 2;
+            tmpDistanceBetweenItems += 0.5;
             itemsRatio = calculateItemsRation(tmpItemWidth, tmpDistanceBetweenItems);
             maxLoopCount--;
           }
         }
-        setPadding(30);
+        setMargin(30);
       } else {
-        tmpItemWidth = timelineRef.current.offsetWidth - 20;
-        setPadding(10);
+        tmpItemWidth = timelineRef.current.offsetWidth;
+        setMargin(10);
       }
 
       setItemWidth(tmpItemWidth);
@@ -101,7 +101,7 @@ const TimeLine = () => {
     const changeDragSize = () => {
       const { width } = timelineRef.current.getBoundingClientRect();
       const offSetWidth = (items.length - 1) * (itemWidth + distanceBetweenItems) + itemWidth;
-      const newOffset = offSetWidth - width;
+      let newOffset = offSetWidth - width;
 
       setOffset(newOffset);
       setDragField(offSetWidth);
@@ -122,15 +122,15 @@ const TimeLine = () => {
       onClick={remind}
       onViewportEnter={remind}
       onViewportLeave={() => clearInterval(remindIntervalIndex)}
-      style={{ padding: `0 ${padding}px` }}
+      style={{ margin: `0 ${margin}px` }}
       initial="hidden"
       whileInView="show"
       ref={timelineRef}
       className="timeLine"
       id="Timeline"
     >
-      <div ref={dragFieldRef} className="timeLine__dragField" style={{ left: `-${offset + padding}px`, width: `${dragFieldWidth}px` }}></div>
-      <motion.div key={offset} ref={contentRef} dragConstraints={dragFieldRef} drag="x" className="timeLine__container">
+      <div ref={dragFieldRef} className="timeLine__dragField" style={{ left: `-${offset}px`, width: `${dragFieldWidth}px` }}></div>
+      <motion.div key={offset} ref={contentRef} dragConstraints={dragFieldRef} drag={offset > 0 ? "x" : "none"} className="timeLine__container">
         <motion.ul style={{ width: `${dragFieldWidth}px`, height: "100%" }} variants={animations.list} className="timeLine__list">
           {items.map(({ date, text }, index) => (
             <motion.li variants={animations.item} style={{ left: (itemWidth + distanceBetweenItems) * index }} key={index} className="timeLine__item">
@@ -144,7 +144,7 @@ const TimeLine = () => {
         </motion.ul>
         <div style={{ width: (items.length - 1) * (itemWidth + distanceBetweenItems) }} className="timeLine__line" />
       </motion.div>
-      {remindAboutDrag && (
+      {remindAboutDrag && offset > 0 && (
         <motion.span
           variants={animations.icon}
           onAnimationComplete={() => setRemindAboutDragState(false)}
