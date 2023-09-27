@@ -17,6 +17,14 @@
       "hostingLink": "https://quizzes.szymon17.warszawa.pl"
     },
     {
+      "name": "PingPong",
+      "description": "Celem gracza jest przebicie piłki na stronę przeciwnika tak, aby ten nie zdołał jej zatrzymać.",
+      "technologies": ["html", "css", "ts"],
+      "imgUrl": "/assets/images/pingpong.jpg",
+      "githubLink": "https://github.com/Szymon17/PingPong",
+      "hostingLink": "https://pingpong.szymon17.warszawa.pl"
+    },
+    {
       "name": "5 Seconds",
       "description": "Projekt mający na celu stworzenie prostej gry, Zasady są proste. Gracze po kolei losują pytania a następnie mają równo 5 sekund na odpowiedź.",
       "technologies": ["react", "ts", "css"],
