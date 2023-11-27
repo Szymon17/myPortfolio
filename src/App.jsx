@@ -1,28 +1,31 @@
 import "./App.css";
-import { useContext } from "react";
-import { AnimationsContext } from "./context/animations.context";
-import AboutMe from "./components/AboutMe/AboutMe.component";
-import Header from "./components/Header/Header.component";
-import Projects from "./components/Projects/Projects.component";
-import CvLink from "./components/CvLink/CvLink.component";
-import ContactMe from "./components/ContactMe/ContactMe.component";
-import TopPanel from "./components/TopPanel/TopPanel.component";
+import { useState } from "react";
+import Navigation from "./components/navigation/navigation";
+import Home from "./components/home/home";
+import About from "./components/about/about";
+import Skills from "./components/skills/skills";
+import Projects from "./components/projects/projects";
+import TimeLine from "./components/time-line/time-line";
+import Contact from "./components/contact/contact";
 
 function App() {
-  const { headerIsRendered, aboutMeIsRendered, topPanelIsRendered, projectsAreRendered } = useContext(AnimationsContext);
+  const [homeIsRendered, setHomeState] = useState(false);
+
+  const homeRenderedHandler = () => setHomeState(true);
 
   return (
     <div className="App">
-      <div className="title-page__container">
-        <Header />
-        {headerIsRendered && <TopPanel />}
-      </div>
-      <div className="App-container">
-        {topPanelIsRendered && <AboutMe />}
-        {aboutMeIsRendered && <Projects />}
-        {projectsAreRendered && <ContactMe />}
-      </div>
-      <CvLink />
+      <Navigation />
+      <Home renderedHandler={homeRenderedHandler} />
+      {homeIsRendered && (
+        <>
+          <About />
+          <Skills />
+          <Projects />
+          <TimeLine />
+          <Contact />
+        </>
+      )}
     </div>
   );
 }

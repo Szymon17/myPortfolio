@@ -22,11 +22,11 @@ const Projects = () => {
               <h1 className="project__title">{name}</h1>
               <h2 className="project__description">{description}</h2>
               <div className="project__links">
-                <a className="project__link" href={githubLink}>
+                <a className="project__link" target="__blank" href={githubLink}>
                   <FontAwesomeIcon icon={faCode} />
                 </a>
                 {hostingLink && (
-                  <a className="project__link" href={hostingLink}>
+                  <a className="project__link" target="__blank" href={hostingLink}>
                     <FontAwesomeIcon icon={faUpRightFromSquare} />
                   </a>
                 )}

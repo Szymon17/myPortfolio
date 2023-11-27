@@ -1,0 +1,74 @@
+.timeLine {
+  height: 320px;
+  position: relative;
+  padding: 0;
+}
+
+.timeLine__dragField {
+  position: absolute;
+  height: 100%;
+}
+
+.timeLine__container {
+  position: relative;
+  height: 250px;
+  font-size: 16px;
+  cursor: grab;
+}
+
+.timeLine__line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  min-width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+.timeLine__item {
+  position: absolute;
+  bottom: 0;
+  left: auto;
+  width: 300px;
+}
+
+.timeLine__circle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(50%);
+  content: "";
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: orange;
+  z-index: 2;
+}
+
+.timeLine__textContainer {
+  margin-bottom: 30px;
+  height: 160px;
+  padding: 10px 20px;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.35);
+}
+
+.timeLine__title {
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.timeLine__icon {
+  font-size: 2em;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+}
+
+@media (max-width: 1200px) {
+  .timeLine__textContainer {
+    font-size: 0.9em;
+  }
+}
