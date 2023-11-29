@@ -1,9 +1,8 @@
 import "./navigation.css";
-import { useContext } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 const Navigation = () => {
-  const navHeight = 60;
+  const navHeight = 50;
 
   return (
     <div className="navigation">
@@ -31,11 +30,6 @@ const Navigation = () => {
         <li>
           <Link to="Timeline" smooth offset={-navHeight} className="navigation__item">
             Linia czasu
-          </Link>
-        </li>
-        <li>
-          <Link onClick={() => scroll.scrollToBottom()} className="navigation__item">
-            Kontakt
           </Link>
         </li>
       </ul>

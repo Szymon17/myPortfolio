@@ -22,22 +22,30 @@
       "hostingLink": "https://pingpong.szymon17.warszawa.pl"
     },
     {
+      "name": "Logger",
+      "description": "Bot przeznaczony do aplikacji discord. Tworzy wiadomości na wybranym kanale tekstowym o treści urozmaiconych zdarzeń serwerowych.",
+      "technologies": ["js"],
+      "githubLink": "https://github.com/Szymon17/discord-logger"
+    },
+    {
       "name": "5Seconds",
       "description": "Projekt mający na celu stworzenie prostej gry, Zasady są proste. Gracze po kolei losują pytania a następnie mają równo 5 sekund na odpowiedź.",
       "technologies": ["react", "ts", "css"],
-      "githubLink": "https://github.com/Szymon17/QuizzesLand"
+      "githubLink": "https://github.com/Szymon17/5seconds"
     },
     {
       "name": "Warcaby",
       "description": "Gra w warcaby na zasadach tajskich. Zasady w tego typu warcabach różnią się nieco od najpopularniejszej wersji tej gry. Dokładny opis zasad umieszczony został w dokumentacji projektu.",
       "technologies": ["html", "css", "js"],
-      "githubLink": "https://github.com/Szymon17/QuizzesLand"
-    },
+      "githubLink": "https://github.com/Szymon17/Checkers"
+    }
+  ],
+  "ready": [
     {
       "name": "Snake",
       "description": "Projekt o tematyce popularnej gry snake. Steruj wirtualnym wężem w celu zjedzenia jak największej ilości jedzenia pojawiającego się na planszy. Unikaj krawędzi planszy oraz własnego ogona.",
       "technologies": ["html", "css", "js"],
-      "githubLink": "https://github.com/Szymon17/QuizzesLand"
+      "githubLink": "https://github.com/Szymon17/snake"
     }
   ]
 }

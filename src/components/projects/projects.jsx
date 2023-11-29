@@ -5,8 +5,8 @@ import { faCode, faUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import "./projects.css";
 
 const variants = {
-  notVisible: { opacity: 0, y: 100 },
-  visible: { opacity: 1, y: 0 },
+  notVisible: { opacity: 0, y: "-50%" },
+  visible: { opacity: 1, y: "-100%" },
 };
 
 const Projects = () => {

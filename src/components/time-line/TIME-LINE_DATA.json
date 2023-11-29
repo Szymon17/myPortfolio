@@ -2,7 +2,7 @@
   "items": [
     {
       "date": "25/04/2022",
-      "text": "Przełomowy moment. Właśnie w ten dzień wpadłem na pomysł rozpoczęcia przygody z programowaniem."
+      "text": "Rozpoczełem przygodę z nauką programowania."
     },
     {
       "date": "17/06/2022",
@@ -10,35 +10,39 @@
     },
     {
       "date": "23/06/2022",
-      "text": "Zdobyłem ogólną wiedzę o IT oraz pierwsze dośwadczenie z JavaScript. Czas na parę własnych projektów."
+      "text": "Zdobyłem ogólną wiedzę o IT oraz pierwsze dośwadczenie z JavaScript."
+    },
+    {
+      "date": "01/07/2022",
+      "text": "Pierwszy publiczny projekt na githubie: 'To do app'."
+    },
+    {
+      "date": "08/08/2022",
+      "text": "Ukończenie kursu 'Frontend średnio zaawansowany'."
+    },
+    {
+      "date": "18/08/2022",
+      "text": "Ukończenie kursu 'Javascript od podstaw'."
     },
     {
       "date": "08/09/2022",
-      "text": "Ukończyłem parę kursów, które mocno zmieniły moje podejście do tworzonego kodu."
-    },
-    {
-      "date": "05/10/2022",
-      "text": "Pierwszy publiczny projekt na githubie: 'To do app'."
+      "text": "Ukończenie kursu 'Zaawansowane projekty w css i javascript'."
     },
     {
       "date": "07/10/2022",
       "text": "Pierwszy trudniejszy projekt. 'Gra w warcaby'."
     },
     {
-      "date": "06/02/2023",
-      "text": "Rozpocząłem naukę swojego pierwszego frameworka. Wybór padł na React."
-    },
-    {
       "date": "16/04/2023",
-      "text": "Ukończyłem kurs Reacta, tworząc po drodze kilka własnych, mniejszych projektów."
+      "text": "Ukończenie kursu 'Complete react developer in 2023 (w/ redux hooks graphql)'."
     },
     {
-      "date": "03/07/2023",
-      "text": "Postanowiłem urozmaicić moją wiedzę o tworzenie aplikacji od strony serwera."
+      "date": "26/08/2023",
+      "text": "Ukończenie kursu 'Complete NodeJS Developer in 2023 (GraphQL, MongoDB, + more)'."
     },
     {
-      "date": "28/08/2023",
-      "text": "Powstanie CarRentPark. Mój pierwszy większy projekt łączący frontend jak i backend."
+      "date": "01/09/2023",
+      "text": "Powstanie CarRentPark. Pierwszy większy projekt łączący frontend jak i backend."
     }
   ]
 }

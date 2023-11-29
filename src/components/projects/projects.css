@@ -6,15 +6,27 @@
 }
 
 .projects__list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 150px 2.5%;
 }
 
 .project {
   position: relative;
-  margin: 50px 2.5%;
-  width: 45%;
+  width: 100%;
   cursor: pointer;
+}
+
+.project:nth-child(1),
+.project:nth-child(2) {
+  margin-top: 120px;
+}
+
+.project__text {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .project__img {
@@ -50,5 +62,16 @@
   .projects {
     padding-left: 5%;
     padding-right: 5%;
+  }
+}
+
+@media (max-width: 822px) {
+  .projects__list {
+    grid-template-columns: 1fr;
+    gap: 120px 0;
+  }
+
+  .project:nth-child(2) {
+    margin: 0;
   }
 }

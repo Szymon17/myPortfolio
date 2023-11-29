@@ -1,9 +1,10 @@
 .navigation {
-  padding: 20px 0;
+  padding: 15px 0;
   position: fixed;
   width: 100%;
-  background-color: #d9d9d9;
   z-index: 2;
+  background-color: #383838;
+  color: whitesmoke;
 }
 
 .navigation__list {
@@ -15,7 +16,7 @@
 
 .navigation__item {
   font-family: "Roboto Mono", monospace;
-  font-weight: 550;
+  font-weight: 600;
   cursor: pointer;
 }
 
