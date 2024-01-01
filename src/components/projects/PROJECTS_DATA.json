@@ -8,6 +8,13 @@
       "hostingLink": "https://carrentpark.szymon17.warszawa.pl"
     },
     {
+      "name": "Forecast",
+      "description": "Strona internetowa pokazująca prognozę pogody. Pozwala na wyświetlnie pogody w formie tabelki lub wykresu.",
+      "technologies": ["react", "ts", "tailwindcss", "Rest API"],
+      "githubLink": "https://github.com/Szymon17/weather_forecast",
+      "hostingLink": "https://forecast.szymon17.warszawa.pl/"
+    },
+    {
       "name": "Quizzes",
       "description": "Projekt umożliwia rozwiązywanie quizów osadzonych w bazie danych. Pozwala użytkownikowi stworzyć swoje własne konto oraz swój własny quiz. Stworzone quizy można edytować oraz usuwać.",
       "technologies": ["react", "redux", "ts", "sass", "firebase"],
@@ -38,14 +45,13 @@
       "description": "Gra w warcaby na zasadach tajskich. Zasady w tego typu warcabach różnią się nieco od najpopularniejszej wersji tej gry. Dokładny opis zasad umieszczony został w dokumentacji projektu.",
       "technologies": ["html", "css", "js"],
       "githubLink": "https://github.com/Szymon17/Checkers"
-    }
-  ],
-  "ready": [
+    },
     {
       "name": "Snake",
       "description": "Projekt o tematyce popularnej gry snake. Steruj wirtualnym wężem w celu zjedzenia jak największej ilości jedzenia pojawiającego się na planszy. Unikaj krawędzi planszy oraz własnego ogona.",
       "technologies": ["html", "css", "js"],
       "githubLink": "https://github.com/Szymon17/snake"
     }
-  ]
+  ],
+  "ready": []
 }
