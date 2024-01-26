@@ -18,8 +18,7 @@
       "name": "Quizzes",
       "description": "Projekt umożliwia rozwiązywanie quizów osadzonych w bazie danych. Pozwala użytkownikowi stworzyć swoje własne konto oraz swój własny quiz. Stworzone quizy można edytować oraz usuwać.",
       "technologies": ["react", "redux", "ts", "sass", "firebase"],
-      "githubLink": "https://github.com/Szymon17/QuizzesLand",
-      "hostingLink": "https://quizzes.szymon17.warszawa.pl"
+      "githubLink": "https://github.com/Szymon17/QuizzesLand"
     },
     {
       "name": "PingPong",
